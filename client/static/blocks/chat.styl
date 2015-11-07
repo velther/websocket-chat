@@ -1,0 +1,106 @@
+.chat
+  position: relative
+
+  height: 100%
+  padding-right: 200px
+  padding-bottom: 50px
+
+  box-sizing: border-box
+
+  &-messages
+    height: 100%
+    padding: 20px
+
+    box-sizing: border-box
+    overflow-x: hidden
+    overflow-y: auto
+
+  &-message
+    overflow: hidden
+
+    margin: 10px 0
+
+    color: rgba(#fff, .8)
+    text-shadow: 0 0 3px rgba(#000, .8)
+
+    &:nth-child(2n)
+      color: rgba(#ddd, .8)
+
+    &-my
+      color: #ccf !important
+
+    &-system
+      color: rgba(#cfc, .8) !important
+
+    &-name
+      float: left
+
+      padding-right: 10px
+
+      &:after
+        content: ':'
+
+    &-text
+      float: left
+
+  &-compose
+    position: relative
+
+    box-sizing: border-box
+
+    height: 50px
+    padding-right: 100px
+
+  &-input
+    display: block
+    box-sizing: border-box
+
+    width: 100%
+    height: 50px
+    padding: 10px
+
+    border: none
+    background: rgba(#fff, .7)
+
+    font-size: 1.1em
+    color: #444
+
+  &-button
+    position: absolute
+    top: 0
+    right: 0
+
+    box-sizing: border-box
+
+    width: 100px
+    height: 50px
+    padding: 0
+
+    border: 1px solid rgba(#fff, .5)
+    background: linear-gradient(rgba(#fff, .2), rgba(#fff, .4))
+
+    color: #FFF
+    font-size: 0.96em
+
+  &-contacts
+    position: absolute
+    top: 0
+    right: 0
+
+    width: 200px
+    height: 100%
+    padding: 10px
+
+    overflow-y: auto
+    overflow-x: hidden
+    box-sizing: border-box
+
+    color: rgba(#fff, .8)
+    text-shadow: 0 0 3px rgba(#000, .8)
+
+  .chat-contact
+    &-current
+      color: #c00 !important
+
+    &:nth-child(2n)
+      color: rgba(#ddd, .8)

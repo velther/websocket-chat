@@ -1,0 +1,22 @@
+extends layout
+block body
+    form.login.js-login-form
+        label
+            .login-text Введите имя
+            input.login-control.login-input.js-username(type=text)
+            button.login-control.login-button Войти
+
+    .chat.js-chat-view.g-hidden
+        .chat-messages.js-messages-container
+            .js-messages
+
+        form.chat-compose.js-compose-form
+            textarea.chat-input.js-compose
+            button.chat-button Отправить
+
+        .chat-contacts.js-contacts
+
+    //- Вставляем клиентский конфиг (@TODO: Прикрутить webpack)
+    //- script.
+    //-     window.Config = !{JSON.stringify(clientConfig)};
+    script(src='index.js')
