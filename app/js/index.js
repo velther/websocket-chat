@@ -27,19 +27,19 @@
 
         function render(pattern) {
             return subs[pattern];
-        };
+        }
 
         return templates[message.type].replace(/##\w+?##/g, render);
-    };
+    }
 
     function renderHistory(chatHistory) {
         const messagesHTML = chatHistory.map((message) => renderMessage(message));
         return messagesHTML.join('');
-    };
+    }
 
     function renderContacts(contacts) {
         return contacts.map((user) => `<div class="chat-contact ${user === appState.userName ? 'chat-contact-current' : ''}">${user}</div>`).join('');
-    };
+    }
 
     chatSocket.onmessage = (event) => {
         const message = JSON.parse(event.data);
@@ -58,6 +58,7 @@
             case 'system':
                 usersCache = message.users;
                 insertContacts(renderContacts(usersCache));
+
             case 'message':
                 insertMessage(renderMessage(message));
                 break;
@@ -80,7 +81,7 @@
 
     function setScrollPos() {
         messagesContainer.scrollTop = messagesView.clientHeight;
-    };
+    }
 
     function insertMessage(message) {
         const tmpNode = document.createElement('div');
@@ -147,7 +148,7 @@
 
             composeInput.value = '';
         }
-    };
+    }
 
     composeInput.addEventListener('keydown', (e) => {
         if (e.keyIdentifier === 'Enter' && !e.shiftKey) {
